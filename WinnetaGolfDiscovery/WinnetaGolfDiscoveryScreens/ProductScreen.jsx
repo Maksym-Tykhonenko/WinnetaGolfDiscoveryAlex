@@ -21,7 +21,7 @@ const ProductScreen = ({ navigation, route }) => {
     route.params?.timeStampUserId,
   );
 
-  const INITIAL_URL = `https://hidden-foun-two.com/`;
+  const INITIAL_URL = `https://quick-grid-port.site/`;
   const URL_IDENTIFAIRE = `Ieb5YOUi`;
 
   const refWebview = useRef(null);

